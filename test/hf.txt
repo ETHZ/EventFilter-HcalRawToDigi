@@ -16,7 +16,7 @@ process PROD  = {
 		untracked int32 FilterAmpBegin = 3
 		untracked int32 FilterAmpEnd = 6
 		untracked double FilterAmpLevel = 20.0
-		untracked string readoutMapSource = 'file:///uscms/home/jmmans/work/CMSSW_0_0_1_pre5/src/CondFormats/HcalMapping/test/hf_tb04.txt'
+		untracked string readoutMapSource = 'file://../../../CondFormats/HcalMapping/test/hf_tb04.txt'
 	}
 
         module dumper = HFDataFrameDumper {
