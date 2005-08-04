@@ -19,7 +19,7 @@ process PROD  = {
 		untracked string readoutMapSource = 'file://../../../CondFormats/HcalMapping/test/hf_tb04.txt'
 	}
 
-        module dumper = HFDataFrameDumper {
+        module dumper = HcalDigiDump {
         }
 
 	module out = PoolOutputModule {	
