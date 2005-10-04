@@ -1,6 +1,6 @@
 process PROD  = {
 
-	source = HcalTBInputService { 
+	source = HcalTBSource { 
 		untracked vstring fileNames = { 'tb04_hf_electron_16322.root' }
 		untracked int32 maxEvents = 100
                 untracked vstring streams = { 'HCAL_DCC020' }
