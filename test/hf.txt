@@ -28,7 +28,7 @@ process PROD  = {
 
 	es_module = HcalDbProducer {}
         es_source = HcalHardcodeCalibrations {
-                untracked vstring toGet = {
+                vstring toGet = {
                           "Pedestals","PedestalWidths",
                           "Gains", "GainWidths", "QIEShape", "QIEData",
                           "channelQuality"}
