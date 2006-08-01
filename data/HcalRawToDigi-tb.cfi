@@ -1,6 +1,6 @@
 // This version is intended for unpacking files written
 // at testbeam and teststands using 20 timesamples
-module hcaldigi = HcalRawToDigi {
+module  hcalDigis = HcalRawToDigi {
    /// At most ten samples can be put into a digi, if there are more
    /// than ten, firstSample and lastSample select which samples
    /// will be copied to the digi
