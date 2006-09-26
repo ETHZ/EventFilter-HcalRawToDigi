@@ -19,6 +19,6 @@ module  hcalDigis = HcalRawToDigi {
    /// FED numbers to unpack.  If this is not specified, all FEDs from
    /// FEDNumbering will be unpacked.
    untracked vint32 FEDs = { 700 }
-   /// Complain about missing FEDs
-   untracked bool ComplainEmptyData = true
+   /// Throw exception on missing data
+   untracked bool ExceptionEmptyData = true
 }

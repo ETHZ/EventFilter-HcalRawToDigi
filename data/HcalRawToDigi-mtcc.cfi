@@ -13,4 +13,6 @@ module  hcalDigis = HcalRawToDigi {
    /// Use the defaults for FED numbers
    /// Do not complain about missing FEDs
    untracked bool ComplainEmptyData = false
+   /// Do not complain about missing FEDs
+   untracked bool ExceptionEmptyData = false
 }
