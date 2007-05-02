@@ -5,4 +5,6 @@ module hcalhistos = HcalHistogramRawToDigi {
    /// FED numbers to unpack.  If this is not specified, all FEDs from
    /// FEDNumbering will be unpacked.
    untracked vint32 FEDs = { 20 }
+
+   InputTag InputLabel = source
 }

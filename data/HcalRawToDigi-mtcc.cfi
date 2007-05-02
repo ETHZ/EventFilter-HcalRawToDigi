@@ -15,4 +15,6 @@ module  hcalDigis = HcalRawToDigi {
    untracked bool ComplainEmptyData = false
    /// Do not complain about missing FEDs
    untracked bool ExceptionEmptyData = false
+
+   InputTag InputLabel = source
 }
