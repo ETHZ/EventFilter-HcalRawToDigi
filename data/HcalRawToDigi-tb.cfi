@@ -21,4 +21,5 @@ module  hcalDigis = HcalRawToDigi {
    untracked vint32 FEDs = { 700 }
    /// Throw exception on missing data
    untracked bool ExceptionEmptyData = true
+   InputTag InputLabel = source
 }
