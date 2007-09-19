@@ -1,0 +1,5 @@
+module hcalRawData = HcalDigiToRaw {
+   untracked InputTag HBHE = hcalZeroSuppressedDigis
+   untracked InputTag HF = hcalZeroSuppressedDigis
+   untracked InputTag HO = hcalZeroSuppressedDigis
+}
