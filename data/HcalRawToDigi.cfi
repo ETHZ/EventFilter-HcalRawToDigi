@@ -1,4 +1,4 @@
-// This version is intended for unpacking at MTCC
+// This version is intended for unpacking standard production data
 module  hcalDigis = HcalRawToDigi {
    /// At most ten samples can be put into a digi, if there are more
    /// than ten, firstSample and lastSample select which samples
