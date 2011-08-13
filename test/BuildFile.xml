@@ -1,0 +1,5 @@
+<use   name="boost"/>
+<use   name="EventFilter/HcalRawToDigi"/>
+<bin file="HcalUpgradePackerTest.cpp"/>
+</library>
+
