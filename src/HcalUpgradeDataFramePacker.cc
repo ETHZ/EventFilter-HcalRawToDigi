@@ -56,16 +56,12 @@ void HcalUpgradeDataFramePacker::unpack(const unsigned char * data, HcalUpgradeD
   std::bitset<88> mask5(0x1F);
   unsigned i = 0;
   for(i = 0; i < NBYTES; ++i) {
-std::cout << i << " " << std::hex <<  (int)data[i] << std::dec << std::endl;
     std::bitset<88> tmpbits(data[i]);
     bits |= (tmpbits << 8*i);
-std::cout << "BITS " << (bits>> 8*i).to_ulong() << std::endl; 
   }
   frame.setSize(nadc_);
   unsigned capId = ((bits >> capIdPos_) & mask2).to_ulong();
-std::cout << "CAPID " << capId << std::endl;
   capId = ((bits >> capIdPos_) & mask2).to_ulong();
-std::cout << "CAPID " << capId << std::endl;
 
   frame.setStartingCapId(capId);
   for(i = 0; i < nadc_; ++i)
@@ -74,7 +70,6 @@ std::cout << "CAPID " << capId << std::endl;
     unsigned tdc = 0;
     if(i < ntdcRising_) 
     {
-std::cout << "TDC " << tdcRisingPos_[i] << " " << (bits >> tdcRisingPos_[i]).to_ulong() << " " << (((bits >> tdcRisingPos_[i]) & mask5)).to_ulong() << std::endl;
       tdc |= ((bits >> tdcRisingPos_[i]) & mask5).to_ulong();
     }
     if(i < ntdcFalling_)
