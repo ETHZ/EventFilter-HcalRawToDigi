@@ -148,6 +148,16 @@ void HcalUnpacker::unpack(const FEDRawData& raw, const HcalElectronicsMap& emap,
       report.countSpigotFormatError();
       continue;
     }  
+    // check for EE
+    if (htr.isEmptyEvent()) {
+      report.countEmptyEventSpigot();
+    }
+    if (htr.isOverflowWarning()) {
+      report.countOFWSpigot();
+    }
+    if (htr.isBusy()) {
+      report.countBusySpigot();
+    }    
     if (!htr.check()) {
       if (!silent) 
 	edm::LogWarning("Invalid Data") << "Invalid HTR data observed on spigot " << spigot << " of DCC with source id " << dccHeader->getSourceId();
