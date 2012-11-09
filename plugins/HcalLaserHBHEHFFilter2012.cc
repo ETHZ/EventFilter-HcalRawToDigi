@@ -171,6 +171,7 @@ HcalLaserHBHEHFFilter2012::filter(edm::Event& iEvent, const edm::EventSetup& iSe
   for (HcalCalibDigiCollection::const_iterator Calibiter = calib_digi->begin();
        Calibiter != calib_digi->end(); ++ Calibiter) {
     const HcalCalibDataFrame digi = (const HcalCalibDataFrame)(*Calibiter);
+    if (digi.zsMarkAndPass()) continue; // skip digis labeled as "mark and pass" in NZS events
     HcalCalibDetId myid=(HcalCalibDetId)digi.id();
     if (filterHBHE_ && (myid.hcalSubdet()==HcalBarrel || myid.hcalSubdet()==HcalEndcap)) 
       {
@@ -178,7 +179,7 @@ HcalLaserHBHEHFFilter2012::filter(edm::Event& iEvent, const edm::EventSetup& iSe
 	// Compute charge in current channel (for relevant TS only)
 	// If total charge in channel exceeds threshold, increment count of calib channels
 	double thischarge=0;
-	for (uint i=0;i<CalibTS_.size();++i) {
+	for (unsigned int i=0;i<CalibTS_.size();++i) {
 	  thischarge+=digi[CalibTS_[i]].nominal_fC();
 	  if (thischarge>  HBHEcalibThreshold_ ) {
 	    ++ncalibHBHE;
